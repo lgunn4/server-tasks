@@ -8,4 +8,4 @@ do
     esac
 done
 
-rsync -e ‘ssh -p 22’ -avzp $source $destination
+rsync -avzzp $source $destination
