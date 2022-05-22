@@ -47,7 +47,6 @@ def sort(extensions, source, destination):
     print("Moved %i files" % move_files_to_folders(files, source, destination))
 
 def get_year_month_taken(file_name):
-    print(file_name)
     with open(file_name, 'rb') as fh:
         tags = exifread.process_file(fh, stop_tag="EXIF DateTimeOriginal")
 
@@ -67,7 +66,6 @@ def get_year_month_taken(file_name):
 
 
 if __name__ == '__main__':
-
     parser = argparse.ArgumentParser(prog=sys.argv[0], usage='%(prog)s [options]')
     parser.add_argument("-e","--extension",action='append',help="File extensions to match",required=False)
     parser.add_argument("-s","--source",help="Source of the new photos",required=True)
