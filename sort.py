@@ -7,6 +7,7 @@ def create_file_list(ext, source):
 
     files_with_mtime = []
     for filename in [f for f in os.listdir(source) if os.path.splitext(f)[1] in ext]:
+        filename = os.path.join(source, filename)
         year = datetime.datetime.fromtimestamp(os.stat(filename).st_mtime).strftime('%Y')
         month = datetime.datetime.fromtimestamp(os.stat(filename).st_mtime).strftime('%m')
         files_with_mtime.append((filename, year, month))
