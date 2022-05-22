@@ -50,9 +50,11 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(prog=sys.argv[0], usage='%(prog)s [options]')
     parser.add_argument("-e","--extension",action='append',help="File extensions to match",required=False)
-    parser.add_argument("-s","--source",action='append',help="Source of the new photos",required=True)
-    parser.add_argument("-d","--destination",action='append',help="Destination to copy the new photos to",required=True)
+    parser.add_argument("-s","--source",help="Source of the new photos",required=True)
+    parser.add_argument("-d","--destination",help="Destination to copy the new photos to",required=False)
 
     args = parser.parse_args()
     extensions = args.extension if args.extension else BASE_EXTENSIONS
-    sort(extensions, args.source[0], args.destination[0])
+    source = args.source
+    destination = args.destination if args.destination else args.source
+    sort(extensions, args.source, destination)
