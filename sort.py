@@ -58,11 +58,11 @@ def get_year_month_taken(file_name):
 
             return (year, month)
     
-        date_taken = os.stat(file_name).st_mtime
-        year = datetime.datetime.fromtimestamp(date_taken).strftime('%Y')
-        month = datetime.datetime.fromtimestamp(date_taken).strftime('%m')
+    date_taken = os.stat(file_name).st_mtime
+    year = datetime.datetime.fromtimestamp(date_taken).strftime('%Y')
+    month = datetime.datetime.fromtimestamp(date_taken).strftime('%m')
 
-        return (year, month)
+    return (year, month)
 
 
 if __name__ == '__main__':
