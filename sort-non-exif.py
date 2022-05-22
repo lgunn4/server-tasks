@@ -1,6 +1,6 @@
-import os, datetime, errno, argparse, sys
+import os, datetime, errno, argparse, sys, extensions
 
-BASE_EXTENSIONS = ['GIF', 'jpeg', 'JPEG', 'JPG', 'mov', 'MOV', 'mp4', 'MP4', 'PNG', 'png', 'WEBP']
+BASE_EXTENSIONS = extensions.extensions
 
 def create_file_list(ext, source):
     """ takes string as path, returns tuple(files,year,month) """
