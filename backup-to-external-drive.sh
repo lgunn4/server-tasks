@@ -8,4 +8,4 @@ do
     esac
 done
 
-rsync -avzzp $source $destination
+rsync -avzzp --delete $source $destination
