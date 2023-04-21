@@ -1,1 +1,1 @@
-0 0 1 1 * root cd /app && python script.py -s source -d destination >> /var/log/cron.log 2>&1
+* * * * * root cd /app && python sort.py -s /source -d /destination >> /var/log/cron.log 2>&1

@@ -1,4 +1,4 @@
-import os, datetime, errno, argparse, sys, exifread, extensions
+import os, datetime, errno, argparse, sys, exifread, extensions, shutil
 
 BASE_EXTENSIONS = extensions.extensions
 
@@ -33,7 +33,7 @@ def move_files_to_folders(files, source, destination):
         year = i[1]
         month = i[2]
         try:
-            os.rename(os.path.join(source,file), os.path.join(destination, year, month, file))
+            shutil.move(os.path.join(source, file), os.path.join(destination, year, month, file))
         except Exception as e:
             raise
     return len(files)
