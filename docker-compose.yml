@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  my_service:
+    build: .
+    volumes:
+      - /Users/logangunn/Github/server-tasks/source:/source_data
+      - /Users/logangunn/Github/server-tasks/destination:/destination_data
