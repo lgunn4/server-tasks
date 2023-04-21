@@ -10,8 +10,8 @@ RUN pip install exifread configparser extensions
 RUN apt-get update && apt-get -y install cron
 
 # Specify that the script requires data to be mounted
-VOLUME /source_data
-VOLUME /destination_data
+# VOLUME /source_data
+# VOLUME /destination_data
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/simple-cron
